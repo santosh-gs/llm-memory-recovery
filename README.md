@@ -1,4 +1,4 @@
-# LLM Memory Recovery
+# Long term memory for LLMs (LLM Memory Recovery)
 
 ## Instructions
 ### Download the repository
