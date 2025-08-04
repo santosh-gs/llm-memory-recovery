@@ -29,3 +29,25 @@ Inside a terminal, run the following:
 * If the model thinks any info within the prompt is worth remembering. Check `system_prompt.txt` for detailed analysis that takes place.
 * Prompt `q` to quit.
 
+## Prompt Engineering
+* Here, I have used rarely used ASCII characters `þ` and `ÿ` as separators between response and action to be taken regarding memory.
+* The actions include `add` `delete` `ignore` 
+
+### `ignore` action
+* Just respond to query and need not add any info to memory.
+
+### `add` action
+* Add concise summarized key statements to memory.
+
+### `delete` action
+* Delete memory entry that's no longer needed.
+
+### Updating Existing Memory Entry
+* To update an existing memory entry, we use `add` and `delete` one after the other  
+`add` final desired entry  
+`delete` existing entry  
+e.g. suppose a memory entry can be "User like Cricket and Football" 
+Now if the user no longer likes Football, we run:  
+`add` "User likes Cricket"
+`delete` "User like Cricket and Football"
+* Check `system_prompt.txt` for detailed instructions and examples.
