@@ -22,3 +22,10 @@ Inside a terminal, run the following:
 * Install dependencies `pip install -r requirements.txt`
 * Run `python main.py` in the terminal or open the folder in a code editor like VS Code
 
+
+### LLM Instructions
+* You will asked to prompt your query as follows  
+`Ask your question (q to quit):` give your prompt  
+* If the model thinks any info within the prompt is worth remembering. Check `system_prompt.txt` for detailed analysis that takes place.
+* Prompt `q` to quit.
+
