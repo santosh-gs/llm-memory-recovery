@@ -144,13 +144,13 @@ QUESTION:
     )
 
     full = response.choices[0].message.content.strip()
-    print(f"full: {full}")
+    # print(f"full: {full}")
     parts = full.split("þ")
-    print(f"parts: {parts}")
+    # print(f"parts: {parts}")
     main_response = parts[0].strip()
-    print(f"main_response: {main_response}")
+    # print(f"main_response: {main_response}")
     memory_actions = parts[1:] if len(parts) > 1 else []
-    print(f"memory_actions: {memory_actions}")
+    # print(f"memory_actions: {memory_actions}")
 
     handle_memory_actions(memory_actions)
     return main_response
