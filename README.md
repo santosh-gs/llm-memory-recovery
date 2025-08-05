@@ -32,6 +32,19 @@ Rather open it in VS Code to track live memory updates.
 * If the model thinks any info within the prompt is worth remembering. Check `system_prompt.txt` for detailed analysis that takes place.
 * Prompt `q` to quit.
 
+### Example Prompts
+* Hi, I am Santosh. I like PyTorch and TensorFlow. In which years were these frameworks released?
+* I like apples, bananas, and chess. Which of apple and banana contain more protein per fruit?
+* Who am I?
+* What do you know about me? List everything
+* Which frameworks do I like?
+* I no longer like TensorFlow, it's so overwhelming.
+* Which frameworks do I like now?
+
+The memory is stored in `persistent_memory_user0.csv` in the `data` folder. As long as the user remains same, the memory persists and can be recalled.  
+
+If you want to start over, just change `USER_ID` variable to something like`user1`.
+
 ## Prompt Engineering
 * Here, I have used rarely used ASCII characters `þ` and `ÿ` as separators between response and action to be taken regarding memory.
 * The actions include `add` `delete` `ignore` 
