@@ -3,9 +3,10 @@ This project implements a Retrieval-Augmented Generation (RAG) system using Lang
 
 The LLM identifies the pieces of information that are worth keeping or removing, while memory metadata and IDs are persistently stored using SQLite, CSV, or JSON for tracking.  
 
-The architecture supports chunked document ingestion, semantic search, and conversational querying, making it adaptable for chatbots, personal assistants, where specific information needs to be retained over time.
+The architecture supports chunked documents, semantic search, and conversational querying, making it adaptable for chatbots, personal assistants, where specific information needs to be retained over time.
 
 Check [`test_ouput.md`](https://github.com/santosh-gs/llm-memory-recovery/blob/main/test_output.md) for tested prompts and simulataneous memory updates that happen.  
+
 Check [`system_design.md`](https://github.com/santosh-gs/llm-memory-recovery/blob/main/system_design.md) for high level architecture and other design details.
 
 ![System Design Visualization](https://github.com/santosh-gs/llm-memory-recovery/blob/main/images/system_design.png?raw=true)
@@ -23,11 +24,11 @@ Before you begin, set up an OpenAI account and generate a new key. You will need
 ### Running the application
 Inside a terminal, run the following:
 * Navigate to the cloned folder using `cd /llm-memory-recovery`
-* Create a virtual environment using `python -m venv myenv` (Optional if you already have the required libraries)
+* Create a virtual environment using `python -m venv myenv` or `pyhon3 -m venv myenv` for Mac or Linux systems (Optional if you already have the required libraries)
 * Activate the virtual enviroment (if any) using  
 `myenv\Scripts\activate` (if using Windows Command Prompt)  
 `.\myenv\Scripts\Activate.ps1` (if using Windows PowerShell)  
-`source myenv/Scripts/activate` (if using git bash or bash in Mac or Linux system)  
+`source myenv/Scripts/activate` (if using Git Bash in Windows or Bash in UNIX systems)  
 
 * Install dependencies `pip install -r requirements.txt`
 * Run `python main.py` in the terminal or open the folder in a code editor like VS Code
@@ -55,8 +56,8 @@ The memory is stored in `persistent_memory_user0.csv` in the `data` folder. As l
 
 If you want to start over, prompt `delete all memory` or change `USER_ID` variable to something like `user1`.
 
-## Prompt Engineering
-* Here, I have used rarely used ASCII characters `þ` and `ÿ` as separators between response and action to be taken regarding memory.
+## Prompt Engineering (Response + Action)
+* Here, I have used rarely used ASCII characters `þ` and `ÿ` as separators/delimiters between response and action to be taken regarding memory.
 * The actions include `add` `delete` `ignore` 
 
 ### `ignore` action
@@ -76,4 +77,4 @@ e.g. suppose a memory entry can be "User like Cricket and Football"
 Now if the user no longer likes Football, we run:  
 `add` "User likes Cricket"
 `delete` "User like Cricket and Football"
-* Check [`system_prompt.txt`](https://github.com/santosh-gs/llm-memory-recovery/blob/main/system_prompt.txt) for detailed instructions and examples.
+* Check [`system_prompt.txt`](https://github.com/santosh-gs/llm-memory-recovery/blob/main/system_prompt.txt) for detailed instructions and prompt template.
