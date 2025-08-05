@@ -16,7 +16,7 @@ Inside a terminal, run the following:
 * Create a virtual environment using `python -m venv myenv` (Optional if you already have the required libraries)
 * Activate the virtual enviroment (if any) using  
 `myenv\Scripts\activate` (if using Windows Command Prompt)  
-`.\myenv\Scripts\Activate.ps1` (if using Windows PowerShell)
+`.\myenv\Scripts\Activate.ps1` (if using Windows PowerShell)  
 `source myenv/Scripts/activate` (if using git bash or bash in Mac or Linux system)  
 
 * Install dependencies `pip install -r requirements.txt`
