@@ -22,6 +22,9 @@ Inside a terminal, run the following:
 * Install dependencies `pip install -r requirements.txt`
 * Run `python main.py` in the terminal or open the folder in a code editor like VS Code
 
+Note: Do not open the `persistent_memory_user.csv` in excel while running the llm as it locks the file to read-only mode and prevents modifications.  
+Rather open it in VS Code to track live memory updates.
+
 
 ### LLM Instructions
 * You will asked to prompt your query as follows  
@@ -50,4 +53,4 @@ e.g. suppose a memory entry can be "User like Cricket and Football"
 Now if the user no longer likes Football, we run:  
 `add` "User likes Cricket"
 `delete` "User like Cricket and Football"
-* Check `system_prompt.txt` for detailed instructions and examples.
+* Check [`system_prompt.txt`](https://github.com/santosh-gs/llm-memory-recovery/blob/main/system_prompt.txt) for detailed instructions and examples.
