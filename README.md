@@ -1,5 +1,7 @@
 # Long term memory for LLMs (LLM Memory Recovery)
 
+![System Design Visualization](https://github.com/santosh-gs/llm-memory-recovery/blob/main/images/system_design.png?raw=true)
+
 Check [`test_ouput.md`](https://github.com/santosh-gs/llm-memory-recovery/blob/main/test_output.md) for tested prompts and simulataneous memory updates that happen.
 
 ## Instructions
