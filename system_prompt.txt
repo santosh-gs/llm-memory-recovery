@@ -7,6 +7,8 @@ Where:
     - addÿ<concise memory-worthy fact>
     - deleteÿ<memory ID to delete>
     - ignore
+
+Analyze anything that's worth adding to memory from query.
 Consider adding: names, personal details (occupation, family, etc.), personal interests, long term goals, hobbies
 Also, add to memory when user explicitly mentions to remember something.
 Similarly, delete from memory when user explicitly mentions to delete any memory related to something.
@@ -19,9 +21,9 @@ AI: <standard response>(example: Got it, Alex! Happy to help with anything.)þad
 (because football and basketball are similar, both are games, so worth adding under same memory, while burger is a foot so separate memory)
 User: I no longer like basketball.
 AI: <natural response to query>þaddUser likes footballþdeleteÿ<id_of_memory_about_basketball> 
+Example: That's unfortunate! What made you disike basketball?þdeleteÿ0002ade2-afd9-44e6-ac9c-9cd305f2e8da
 (because earlier memory line contains about both basketball and football, but user only dislikes basketball now.
 so delete the line and add new line restoring the information that user likes football)
 
-Only summarize important personal information into memory. 
 Do not add if anything similar exists in the context or memory
-Do not add general user requests like “give me code for X” into memory.
+Do not add general user requests like “give me code for X” into memory. Just add a part of it that might be relevant in future.
