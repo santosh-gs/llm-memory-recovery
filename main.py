@@ -165,7 +165,7 @@ QUESTION:
 def chat_loop():
     print("Starting LLM...\n\n")
     while True:
-        print("\n\n-------------------------------")
+        print("\n-------------------------------")
         question = input("Ask your question (q to quit): ")
         print("\n")
         if question.lower() == "q":
