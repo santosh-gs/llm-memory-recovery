@@ -14,11 +14,10 @@
 | **OpenAI Chat Model (gpt-4.1, -mini, -nano, etc.)** | Generates responses, processes queries, and returns structured memory actions |
 | **RecursiveCharacterTextSplitter**           | Splits documents (memory here) into smaller overlapping chunks for better retrieval accuracy (500 + 250 overlap used here) |
 | **Retriever (.as_retriever)**                | Fetches the most relevant memory chunks from the vector store for prompt injection |
-| **Persistence Layer**                        | Saves vector store and metadata to disk so memory survives application restarts. Automatically handled by Chroma |
 | **Similarity Search Algorithm (Cosine/Euclidean)** | Finds the closest matching stored memory vectors to a given query. The default for Chroma is Euclidean Distance algorithm |
-| **Prompt Template**                          | Defines structured input for the LLM, including retrieved context and conversation history |
 | **UUID / ID Generator**                      | Assigns unique IDs to stored memory entries for easy deletion and updates |
 | **Memory Deletion & Update Mechanism**       | Handles user or LLM-triggered removal or modification of stored memories |
+| **Persistence Layer**                        | Saves vector store and metadata to disk so memory survives application restarts. Automatically handled by Chroma |
 
 
 ### System Prompt (Few-Shot Technique)
