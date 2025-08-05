@@ -24,3 +24,9 @@ Retrieval of updated information:
 
 ![Query 7](https://github.com/santosh-gs/llm-memory-recovery/blob/main/output/query_7_output_and_memory.png?raw=true)
 
+### Additional Memory Managaement Queries
+One can use the following queries to directly manage the memory:
+* List all the memory entries
+* Delete all memory
+* List all the memory related to sports and food
+* Delete memory associated with games
