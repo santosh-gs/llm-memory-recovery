@@ -22,8 +22,8 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Constants
 USER_ID = "user0"
-MODEL_NAME = "gpt-4o"
-# MODEL_NAME = "gpt-4.1-mini"
+MODEL_NAME = "gpt-4.1" # gpt-4o, gpt-4.1-mini, gpt-4.1-nano
+# MODEL_NAME = "gpt-4o"
 TEMPERATURE = 0.7
 DATA_DIR = "./data"
 PROMPT_FILE = "./system_prompt.txt"
