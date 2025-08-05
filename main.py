@@ -149,7 +149,7 @@ QUESTION:
     )
 
     full = response.choices[0].message.content.strip()
-    # print(f"full: {full}")
+    # print(f"full: {full}") # Actual response from api call
     parts = full.split("þ")
     # print(f"parts: {parts}")
     main_response = parts[0].strip()
@@ -167,7 +167,7 @@ def chat_loop():
     while True:
         print("\n\n-------------------------------")
         question = input("Ask your question (q to quit): ")
-        print("\n\n")
+        print("\n")
         if question.lower() == "q":
             break
         response = answer_query(question)
