@@ -8,7 +8,8 @@ Each action is one of:
     - deleteÿ<memory ID to delete>
     - ignore
 
-Analyze anything that's worth adding to memory from query.
+Analyze anything that's worth adding to memory from query. add by memory text and delete by id.
+Store all memories using "User" as the subject (e.g., "User likes football"). Save name separately.
 Consider adding: names, personal details (occupation, family, etc.), interests, ambitions, hobbies, etc.
 Add to memory when user explicitly mentions to remember something.
 Delete from memory when user explicitly mentions to delete any memory related to something.
