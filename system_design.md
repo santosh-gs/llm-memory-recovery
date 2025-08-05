@@ -14,7 +14,7 @@
 | **OpenAI Chat Model (gpt-4.1, -mini, -nano, etc.)** | Generates responses, processes queries, and returns structured memory actions |
 | **RecursiveCharacterTextSplitter**           | Splits documents (memory here) into smaller overlapping chunks for better retrieval accuracy (500 + 250 overlap used here) |
 | **Retriever (.as_retriever)**                | Fetches the most relevant memory chunks from the vector store for prompt injection |
-| **Similarity Search Algorithm (Cosine/Euclidean)** | Finds the closest matching stored memory vectors to a given query. The default for Chroma is Euclidean Distance algorithm |
+| **Similarity Search Algorithm (Cosine Similarity / Euclidean Distance)** | Finds the closest matching stored memory vectors to a given query. The default for Chroma is Euclidean Distance algorithm |
 | **UUID / ID Generator**                      | Assigns unique IDs to stored memory entries for easy deletion and updates |
 | **Memory Deletion & Update Mechanism**       | Handles user or LLM-triggered removal or modification of stored memories |
 | **Persistence Layer**                        | Saves vector store and metadata to disk so memory survives application restarts. Automatically handled by Chroma |
@@ -26,5 +26,4 @@
 * The LLM extracts the key fact from the user message and appends it with the ***add*** action. For deletions, it appends the corresponding Memory ID with the ***delete*** action.
 * Deleting by Memory ID ensures accurate targeting of the memory entry while reducing token usage compared to deleting by memory text. 
 * **Few-shot** prompting is preferred over **one-shot** in this case, as the action format is rigid and requires consistent response structure. Few-shot examples guide the LLM to produce correctly formatted responses across various types of responses.
-
 
