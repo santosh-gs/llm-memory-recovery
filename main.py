@@ -85,7 +85,8 @@ def add_memory(memory_text: str):
         metadata={"id": doc_id, "status": "active"}
     )
     split_docs = splitter.split_documents([doc])
-    vectorstore.add_documents(split_docs)
+    # vectorstore.add_documents(split_docs)
+    vectorstore.add_documents(split_docs, ids=[doc_id]*len(split_docs))
     save_memory_csv(doc_id, memory_text)
     # vectorstore.persist()  # Automatically gets persisted
     return doc_id
@@ -120,7 +121,10 @@ def answer_query(query: str) -> str:
     # if not docs:
     #     return "I couldn't find any memory related to that."
 
-    context = "\n".join([doc.page_content for doc in docs])
+    # context = "\n".join([doc.page_content for doc in docs])
+    context = "\n".join([
+    f"[{doc.metadata.get('id', 'unknown')}] {doc.page_content}" for doc in docs
+])
 
     with open(PROMPT_FILE, "r", encoding="utf-8") as f:
         system_prompt = f.read()
