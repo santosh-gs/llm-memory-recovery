@@ -35,7 +35,7 @@ os.makedirs(DATA_DIR, exist_ok=True)
 # Initialize
 print("Initializing models...")
 llm = ChatOpenAI(model=MODEL_NAME, temperature=TEMPERATURE)
-embedding_model = OpenAIEmbeddings()
+embedding_model = OpenAIEmbeddings() # text-embedding-ada-002 or ada v2
 vectorstore = Chroma(
     persist_directory=CHROMA_DIR,
     embedding_function=embedding_model,
