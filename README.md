@@ -1,5 +1,7 @@
 # Long term memory for LLMs (LLM Memory Recovery)
 
+Check [`test_ouput.md`](https://github.com/santosh-gs/llm-memory-recovery/blob/main/test_output.md) for tested prompts and simulataneous memory updates that happen.
+
 ## Instructions
 ### Download the repository
 * Go to a terminal and paste `git clone https://github.com/santosh-gs/llm-memory-recovery.git`
@@ -43,7 +45,7 @@ Rather open it in VS Code to track live memory updates.
 
 The memory is stored in `persistent_memory_user0.csv` in the `data` folder. As long as the user remains same, the memory persists and can be recalled.  
 
-If you want to start over, just change `USER_ID` variable to something like`user1`.
+If you want to start over, prompt `delete all memory` or change `USER_ID` variable to something like `user1`.
 
 ## Prompt Engineering
 * Here, I have used rarely used ASCII characters `þ` and `ÿ` as separators between response and action to be taken regarding memory.
