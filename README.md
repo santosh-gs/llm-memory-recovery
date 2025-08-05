@@ -1,8 +1,14 @@
-# Long term memory for LLMs (LLM Memory Recovery)
+# Long term memory for LLMs
+This project implements a Retrieval-Augmented Generation (RAG) system using LangChain and Chroma, with OpenAI APIs for language understanding. It maintains long-term, user-specific memory, enabling the system to store, retrieve, and selectively delete past memory based on relevance or demand.  
+
+The LLM identifies the pieces of information that are worth keeping or removing, while memory metadata and IDs are persistently stored using SQLite, CSV, or JSON for tracking.  
+
+The architecture supports chunked document ingestion, semantic search, and conversational querying, making it adaptable for chatbots, personal assistants, where specific information needs to be retained over time.
+
+Check [`test_ouput.md`](https://github.com/santosh-gs/llm-memory-recovery/blob/main/test_output.md) for tested prompts and simulataneous memory updates that happen.  
+Check [`system_design.md`](https://github.com/santosh-gs/llm-memory-recovery/blob/main/system_design.md) for high level architecture and other design details.
 
 ![System Design Visualization](https://github.com/santosh-gs/llm-memory-recovery/blob/main/images/system_design.png?raw=true)
-
-Check [`test_ouput.md`](https://github.com/santosh-gs/llm-memory-recovery/blob/main/test_output.md) for tested prompts and simulataneous memory updates that happen.
 
 ## Instructions
 ### Download the repository
