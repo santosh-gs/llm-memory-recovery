@@ -22,9 +22,10 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Constants
 USER_ID = "user0"
-MODEL_NAME = "gpt-4.1" # gpt-4o, gpt-4.1-mini, gpt-4.1-nano
-# MODEL_NAME = "gpt-4o"
-TEMPERATURE = 0.7
+MODEL_NAME = "gpt-4.1" 
+# gpt-4o, gpt-4.1-mini, gpt-4.1-nano, gpt-5-chat-latest
+# gpt-5, gpt-5-mini, gpt-5-nano (Support only 1 as temperature for now)
+TEMPERATURE = 0.7 # use 1 for gpt-5 models
 DATA_DIR = "./data"
 PROMPT_FILE = "./system_prompt.txt"
 CHROMA_DIR = os.path.join(DATA_DIR, f"chroma_{USER_ID}")
@@ -110,6 +111,8 @@ def handle_memory_actions(actions: List[str]):
             if mem_id:
                 delete_memory_by_id(mem_id)
 
+with open(PROMPT_FILE, "r", encoding="utf-8") as f:
+    system_prompt = f.read()
 
 # Answer Query with Memory Awareness
 def answer_query(query: str) -> str:
@@ -125,19 +128,15 @@ def answer_query(query: str) -> str:
     # context = "\n".join([doc.page_content for doc in docs])
     context = "\n".join([
     f"[{doc.metadata.get('id', 'unknown')}] {doc.page_content}" for doc in docs
-])
-
-    with open(PROMPT_FILE, "r", encoding="utf-8") as f:
-        system_prompt = f.read()
+    ])
 
     prompt = f"""
-Based on the following memory entries, answer the question:
-MEMORIES:
-{context}
-
-QUESTION:
-{query}
-"""
+    Based on the following memory entries, answer the question: 
+    MEMORIES: 
+    {context}
+    QUESTION: 
+    {query} 
+    """
 
     response = client.chat.completions.create(
         model=MODEL_NAME,
@@ -149,12 +148,13 @@ QUESTION:
     )
 
     full = response.choices[0].message.content.strip()
-    # print(f"full: {full}") # Actual response from api call
     parts = full.split("þ")
-    # print(f"parts: {parts}")
     main_response = parts[0].strip()
-    # print(f"main_response: {main_response}")
     memory_actions = parts[1:] if len(parts) > 1 else []
+    
+    # print(f"full: {full}") # Actual response from api call
+    # print(f"parts: {parts}")
+    # print(f"main_response: {main_response}")
     # print(f"memory_actions: {memory_actions}")
 
     handle_memory_actions(memory_actions)
